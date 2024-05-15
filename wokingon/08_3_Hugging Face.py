@@ -9,10 +9,14 @@
 # 시계열 예측 모델을 만들기 위해서 구글의 최신 Foundation 모델인 TimesFM 모델을 허깅페이스에서 사용해봅시다.
 
 # Paper: https://arxiv.org/pdf/2310.10688
+# Blog: https://research.google/blog/a-decoder-only-foundation-model-for-time-series-forecasting/
+# github: https://github.com/google-research/timesfm 
 # 모델(checkpoint): https://huggingface.co/google/timesfm-1.0-200m
 
-
 # Install in Terminal
+
 # git clone https://github.com/google-research/timesfm.git
-#       cpu 버전은 environment_cpu.yml 로 설치
+# conda env create --file=environment_cpu.yml  
+   # gpu 버전은 conda env create --file=environment.yml   
+   
 
