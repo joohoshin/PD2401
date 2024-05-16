@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c2a45b9017ad45cc1cb1826178f47e6d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c2a45b9017ad45cc1cb1826178f47e6d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c2a45b9017ad45cc1cb1826178f47e6d = L.map(
+                "map_c2a45b9017ad45cc1cb1826178f47e6d",
+                {
+                    center: [35.6895, 139.6917],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_80ea3db082b2be8e45c09b1a987c1347 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_80ea3db082b2be8e45c09b1a987c1347.addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+            var marker_6245138ce8b770e10d6bb696120dccd1 = L.marker(
+                [35.74253891071583, 139.6325608952111],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_2565ad94ee02b3e31a6d5ba7cbee154f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_08fe4d9d2a8912795de7c8d1600b45d4 = $(`<div id="html_08fe4d9d2a8912795de7c8d1600b45d4" style="width: 100.0%; height: 100.0%;">东京练马喜美民宿101</div>`)[0];
+                popup_2565ad94ee02b3e31a6d5ba7cbee154f.setContent(html_08fe4d9d2a8912795de7c8d1600b45d4);
+            
+        
+
+        marker_6245138ce8b770e10d6bb696120dccd1.bindPopup(popup_2565ad94ee02b3e31a6d5ba7cbee154f)
+        ;
+
+        
+    
+    
+            marker_6245138ce8b770e10d6bb696120dccd1.bindTooltip(
+                `<div>
+                     东京练马喜美民宿101
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_30aae89cd08dc012a52b7dd458af734b = L.marker(
+                [35.73387, 139.76785],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_ec9fed230b1daabe8c33d02833fcb564 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cd3a612a409126b999f11fc958e78b07 = $(`<div id="html_cd3a612a409126b999f11fc958e78b07" style="width: 100.0%; height: 100.0%;">B26_JR Yamanote Line walk 1 mins, Nishinippori</div>`)[0];
+                popup_ec9fed230b1daabe8c33d02833fcb564.setContent(html_cd3a612a409126b999f11fc958e78b07);
+            
+        
+
+        marker_30aae89cd08dc012a52b7dd458af734b.bindPopup(popup_ec9fed230b1daabe8c33d02833fcb564)
+        ;
+
+        
+    
+    
+            marker_30aae89cd08dc012a52b7dd458af734b.bindTooltip(
+                `<div>
+                     B26_JR Yamanote Line walk 1 mins, Nishinippori
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a9eeb2d6d22413a95625f4159e6365a = L.marker(
+                [35.70197, 139.64617],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_7e4f71d13f2e09e196235f2cad9026c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9dccba5852d823fec625ee94f757fdba = $(`<div id="html_9dccba5852d823fec625ee94f757fdba" style="width: 100.0%; height: 100.0%;">Ririleo Koenji Room 103. 2 stations from Shinjuku</div>`)[0];
+                popup_7e4f71d13f2e09e196235f2cad9026c4.setContent(html_9dccba5852d823fec625ee94f757fdba);
+            
+        
+
+        marker_6a9eeb2d6d22413a95625f4159e6365a.bindPopup(popup_7e4f71d13f2e09e196235f2cad9026c4)
+        ;
+
+        
+    
+    
+            marker_6a9eeb2d6d22413a95625f4159e6365a.bindTooltip(
+                `<div>
+                     Ririleo Koenji Room 103. 2 stations from Shinjuku
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9c9b486adb68b19d3cea1e1958bb0e54 = L.marker(
+                [35.69751356682891, 139.81892749480005],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_05e75994cafa622667b20035c8a2e144 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a8958749b8739646d5d971638daaebb = $(`<div id="html_4a8958749b8739646d5d971638daaebb" style="width: 100.0%; height: 100.0%;">【錦糸町駅徒歩6分！】秋葉原、渋谷、新宿まで直通の好立地！#4</div>`)[0];
+                popup_05e75994cafa622667b20035c8a2e144.setContent(html_4a8958749b8739646d5d971638daaebb);
+            
+        
+
+        marker_9c9b486adb68b19d3cea1e1958bb0e54.bindPopup(popup_05e75994cafa622667b20035c8a2e144)
+        ;
+
+        
+    
+    
+            marker_9c9b486adb68b19d3cea1e1958bb0e54.bindTooltip(
+                `<div>
+                     【錦糸町駅徒歩6分！】秋葉原、渋谷、新宿まで直通の好立地！#4
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61598905d8088d2dfd338cbdcdccc6c4 = L.marker(
+                [35.71668, 139.78908],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_3441145766978c62cb4bfa77b29fd337 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bdf17fec639d83c66db36ca6a9004ae = $(`<div id="html_9bdf17fec639d83c66db36ca6a9004ae" style="width: 100.0%; height: 100.0%;">【Reasonable Price】最大５名 ◎家族、友達、カップルでの贅沢なひとときを★</div>`)[0];
+                popup_3441145766978c62cb4bfa77b29fd337.setContent(html_9bdf17fec639d83c66db36ca6a9004ae);
+            
+        
+
+        marker_61598905d8088d2dfd338cbdcdccc6c4.bindPopup(popup_3441145766978c62cb4bfa77b29fd337)
+        ;
+
+        
+    
+    
+            marker_61598905d8088d2dfd338cbdcdccc6c4.bindTooltip(
+                `<div>
+                     【Reasonable Price】最大５名 ◎家族、友達、カップルでの贅沢なひとときを★
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f02fec4bbf89aa41bfc6ecf05b663aaf = L.marker(
+                [35.6889, 139.71776],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_5106eb52020c2d8711d465c663477fa3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_881371928300b508fff40d13a6b8cd46 = $(`<div id="html_881371928300b508fff40d13a6b8cd46" style="width: 100.0%; height: 100.0%;">1min->Station/Breakfast/Economy Double</div>`)[0];
+                popup_5106eb52020c2d8711d465c663477fa3.setContent(html_881371928300b508fff40d13a6b8cd46);
+            
+        
+
+        marker_f02fec4bbf89aa41bfc6ecf05b663aaf.bindPopup(popup_5106eb52020c2d8711d465c663477fa3)
+        ;
+
+        
+    
+    
+            marker_f02fec4bbf89aa41bfc6ecf05b663aaf.bindTooltip(
+                `<div>
+                     1min->Station/Breakfast/Economy Double
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_10d3fc862e290a6b48364be29420a7f8 = L.marker(
+                [35.71066441064417, 139.78183049708605],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_87f39a993cefb36eaa47c57f1bb40a53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_89fa8e3cebb8b8cd9bf789a7b2568c09 = $(`<div id="html_89fa8e3cebb8b8cd9bf789a7b2568c09" style="width: 100.0%; height: 100.0%;">TOKYO SPA Premier UENO Tokyo Skytree View</div>`)[0];
+                popup_87f39a993cefb36eaa47c57f1bb40a53.setContent(html_89fa8e3cebb8b8cd9bf789a7b2568c09);
+            
+        
+
+        marker_10d3fc862e290a6b48364be29420a7f8.bindPopup(popup_87f39a993cefb36eaa47c57f1bb40a53)
+        ;
+
+        
+    
+    
+            marker_10d3fc862e290a6b48364be29420a7f8.bindTooltip(
+                `<div>
+                     TOKYO SPA Premier UENO Tokyo Skytree View
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_545a09345d747ddce49e32dd5980875e = L.marker(
+                [35.63853, 139.73955],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_8dd485b6b762886a5faa39576bafae84 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_559c33bfd698424db2de84dc4bed2342 = $(`<div id="html_559c33bfd698424db2de84dc4bed2342" style="width: 100.0%; height: 100.0%;">Araiya Tokyo～ラグジュアリー古民家一棟貸し～</div>`)[0];
+                popup_8dd485b6b762886a5faa39576bafae84.setContent(html_559c33bfd698424db2de84dc4bed2342);
+            
+        
+
+        marker_545a09345d747ddce49e32dd5980875e.bindPopup(popup_8dd485b6b762886a5faa39576bafae84)
+        ;
+
+        
+    
+    
+            marker_545a09345d747ddce49e32dd5980875e.bindTooltip(
+                `<div>
+                     Araiya Tokyo～ラグジュアリー古民家一棟貸し～
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ea9550ee16d609074389f6e87a85dce = L.marker(
+                [35.70622, 139.77927],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_1df4d11bb44a4abe7f843dd58042cfa6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c38e9128b9c8ada6d51244518c592216 = $(`<div id="html_c38e9128b9c8ada6d51244518c592216" style="width: 100.0%; height: 100.0%;">B上野車站徒步5分/秋葉原步行可/精装豪华二室一厅机场直达45分</div>`)[0];
+                popup_1df4d11bb44a4abe7f843dd58042cfa6.setContent(html_c38e9128b9c8ada6d51244518c592216);
+            
+        
+
+        marker_0ea9550ee16d609074389f6e87a85dce.bindPopup(popup_1df4d11bb44a4abe7f843dd58042cfa6)
+        ;
+
+        
+    
+    
+            marker_0ea9550ee16d609074389f6e87a85dce.bindTooltip(
+                `<div>
+                     B上野車站徒步5分/秋葉原步行可/精装豪华二室一厅机场直达45分
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b6caa6e51e8fbec13b7c16812344ff13 = L.marker(
+                [35.73389, 139.7174],
+                {}
+            ).addTo(map_c2a45b9017ad45cc1cb1826178f47e6d);
+        
+    
+        var popup_25a89de533e2a5b65ba7a13a733ddb57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95181cf18bf587112b037198a3b7aed1 = $(`<div id="html_95181cf18bf587112b037198a3b7aed1" style="width: 100.0%; height: 100.0%;">(102)池袋徒歩7分 新宿電車5分渋谷11分 設備充実 繁華街に近い 買い物便利 旅館 ホテル</div>`)[0];
+                popup_25a89de533e2a5b65ba7a13a733ddb57.setContent(html_95181cf18bf587112b037198a3b7aed1);
+            
+        
+
+        marker_b6caa6e51e8fbec13b7c16812344ff13.bindPopup(popup_25a89de533e2a5b65ba7a13a733ddb57)
+        ;
+
+        
+    
+    
+            marker_b6caa6e51e8fbec13b7c16812344ff13.bindTooltip(
+                `<div>
+                     (102)池袋徒歩7分 新宿電車5分渋谷11分 設備充実 繁華街に近い 買い物便利 旅館 ホテル
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

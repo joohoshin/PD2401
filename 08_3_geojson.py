@@ -9,11 +9,11 @@ from folium.plugins import HeatMap
 df = gpd.read_file('neighbourhoods.geojson', encoding='cp949')
 
 
-# 기본 시각화
-fig, ax = plt.subplots(figsize=(10, 10))  # 그래프 크기 설정
-df.plot(ax=ax, color='lightblue', edgecolor='black')  # 지역별 색상 및 경계선 색상 설정
-ax.set_title('Neighbourhoods in Tokyo')  # 그래프 타이틀 설정
-plt.show()
+## 기본 시각화
+# fig, ax = plt.subplots(figsize=(10, 10))  # 그래프 크기 설정
+# df.plot(ax=ax, color='lightblue', edgecolor='black')  # 지역별 색상 및 경계선 색상 설정
+# ax.set_title('Neighbourhoods in Tokyo')  # 그래프 타이틀 설정
+# plt.show()
 
 ### 지도위에 표시
 
@@ -68,3 +68,37 @@ HeatMap(heat_data).add_to(m3)
 # 지도 저장
 m3.save('heatmap.html')
 
+
+# 가격 정보를 시각화
+import plotly.io as pio
+import plotly.express as px
+pio.renderers.default='browser'
+
+df = df_cleaned
+df.dropna(subset=['price'], inplace=True)
+
+# Plotly Express를 사용한 3D 지도 그래프 생성
+fig = px.scatter_3d(df, x='longitude', y='latitude', z='price',
+                    color='price', size='price', color_continuous_scale='Viridis',
+                    title='3D Visualization of Prices by Latitude and Longitude')
+
+fig.show()
+
+
+# Folium 지도 생성
+map_tokyo = folium.Map(location=[35.6895, 139.6917], zoom_start=11)
+
+# 각 지점에 CircleMarker 추가
+for idx, row in df.iterrows():
+    folium.CircleMarker(
+        location=[row['latitude'], row['longitude']],
+        radius=row['price'] / 10000,  # 가격을 반영한 원의 크기 조절
+        color='crimson',
+        fill=True,
+        fill_color='crimson',
+        fill_opacity=0.6,
+        popup=folium.Popup(f"Neighbourhood: {row['neighbourhood']}<br>Price: {row['price']}", max_width=200)
+    ).add_to(map_tokyo)
+
+# 지도 저장 및 표시
+map_tokyo.save("map_tokyo_circle.html")
