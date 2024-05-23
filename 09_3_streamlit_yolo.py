@@ -1,47 +1,55 @@
 import streamlit as st
 from ultralytics import YOLO
-import numpy as np
 from PIL import Image
+import numpy as np
+import cv2
+
+# YOLOv8 모델 로드
+@st.cache_resource
+def load_model():
+    model = YOLO('yolov8n.pt')
+    return model
+
+model = load_model()
 
 # 사이드바 메뉴 설정
-menu = st.sidebar.selectbox("Menu", ["Image Inference", "Description"])
+menu = st.sidebar.selectbox("Menu", ["Home", "Description"])
 
-# "Image Inference" 메뉴
-if menu == "Image Inference":
-    # Streamlit 앱 제목 설정
-    st.title("YOLOv8 Image Inference")
+# "Home" 메뉴
+if menu == "Home":
+    st.title("YOLOv8 Object Detection")
+    st.write("Upload an image to perform object detection using YOLOv8.")
 
-    # 이미지 업로드
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
-
     if uploaded_file is not None:
-        # 이미지를 PIL 형식으로 열기
         image = Image.open(uploaded_file)
         st.image(image, caption='Uploaded Image', use_column_width=True)
-        
-        # YOLOv8 모델 불러오기
-        model = YOLO('yolov8n.pt')  # 'yolov8n.pt'는 사전 학습된 YOLOv8 모델 가중치 파일입니다
+        st.write("")
 
-        # 이미지를 numpy 배열로 변환
+        # Convert the image to numpy array
         image_np = np.array(image)
+        image_np = cv2.cvtColor(image_np, cv2.COLOR_RGB2BGR)
 
-        # 모델을 이용한 추론
+        # YOLOv8 inference
         results = model(image_np)
-
-        # 추론 결과를 이미지에 그리기
-        annotated_frame = results[0].plot()  # results.plot() 대신 results[0].plot() 사용
-
-        # 결과 이미지 표시
-        st.image(annotated_frame, caption='Model Inference Result', use_column_width=True)
+        
+        # Render the results
+        annotated_frame = results[0].plot()  # Use plot() method for visualization
+        annotated_image = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB)
+        
+        st.image(annotated_image, caption='Annotated Image', use_column_width=True)
 
 # "Description" 메뉴
 elif menu == "Description":
     st.title("Description")
     st.write("""
-        This application demonstrates the use of the YOLOv8 model for image inference.
-        - **Image Inference**: Upload an image to perform object detection using the YOLOv8 model.
-        - **Description**: This section provides information about the application and its functionality.
+        This application demonstrates the use of YOLOv8 for object detection. You can upload an image and see the detected objects highlighted in the image.
         
-        The YOLO (You Only Look Once) model is a state-of-the-art, real-time object detection system.
-        It is widely used in various applications such as video surveillance, autonomous driving, and more.
+        ### How it works:
+        1. **Model Loading**: The YOLOv8 model is loaded only once using Streamlit's caching mechanism.
+        2. **Image Upload**: You can upload an image using the file uploader.
+        3. **Object Detection**: The uploaded image is processed by the YOLOv8 model to detect objects.
+        4. **Result Display**: The detected objects are highlighted and displayed on the image.
+        
+        **YOLOv8** (You Only Look Once version 8) is a state-of-the-art, real-time object detection system. It is pre-trained on a large dataset and can detect various objects in images.
     """)
