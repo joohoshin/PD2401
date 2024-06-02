@@ -1,3 +1,6 @@
+### FastAPI를 활용해서 AI 서버를 만들 수 있음
+# https://fastapi.tiangolo.com/tutorial/first-steps/
+
 from typing import Union
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse, StreamingResponse
